@@ -19,12 +19,12 @@
           var selection = ed.selection.getContent();
           var node = ed.selection.getNode();
           // [TODO] do this without jquery using the tiny api
-          var $box = jQuery(ed.selection.getNode()).closest('div.tiny-infobox');
+          var $box = jQuery(ed.selection.getNode()).closest('div.info-box');
           if( $box.length > 0 ) {
               $box.replaceWith($box.html());
           } else {
             if( selection.length < 1 ) return;
-            ed.selection.setContent('<div class="tiny-infobox">' + ed.selection.getContent() + '</div>');
+            ed.selection.setContent('<div class="info-box">' + ed.selection.getContent() + '</div>');
           }
         }
 			});
@@ -32,7 +32,7 @@
 
 			ed.onNodeChange.add(function(ed, cm, n, co) {
         //[TODO] set image to active state when inside an infobox
-        //jQuery(ed.selection.getNode()).closest('div.tiny-infobox').length > 0
+        //jQuery(ed.selection.getNode()).closest('div.info-box').length > 0
         //tinyMCE.activeEditor.controlManager.get('link').setDisabled(false)
 			});
 		},
