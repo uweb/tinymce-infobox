@@ -16,15 +16,19 @@
         image : 'MyCoolBtn.png', 
         onclick : function(a,b,c,d,e) { 
           ed.focus(); 
+          var max = 200;
           var selection = ed.selection.getContent();
           var node = ed.selection.getNode();
           // [TODO] do this without jquery using the tiny api
-          var $box = jQuery(ed.selection.getNode()).closest('div.info-box');
+          var $box  = jQuery(ed.selection.getNode()).closest('div.info-box');
+          $box.removeClass('info-box-large');
           if( $box.length > 0 ) {
               $box.replaceWith($box.html());
+              if($box.html().length > max) $box.addClass('info-box-large');
           } else {
             if( selection.length < 1 ) return;
-            ed.selection.setContent('<div class="info-box">' + ed.selection.getContent() + '</div>');
+            var classes = ed.selection.getContent().length > max ? 'info-box info-box-large' : 'info-box'
+            ed.selection.setContent('<div class="'+ classes +'">' + ed.selection.getContent() + '</div>');
           }
         }
 			});
