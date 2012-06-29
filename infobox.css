@@ -1,9 +1,106 @@
+#content_uwinfobox span {
+	background: url("/cms/wp-content/themes/uw/img/admin/inset-box.gif") no-repeat 0 0 transparent;
+}
+#content_uwinfobox span:hover {
+	background-position: 0 -20px;
+}
+#content_uwinfobox img  {
+	display: none;
+}
+
+/**** Overwrite content.css ****/
+
+.wp-caption {
+	border: none;
+	text-align: left;
+	background-color: #FFF;
+	padding-top: inherit;
+	margin: inherit;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+
+/**** From Bootstrap ****/
+
+
+
+body {
+  margin: 15px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+
+
+/* ----  Photo Handling ---- */
+
+.undefined {
+    position: relative;
+}
+
+.alignleft {
+    float: left;
+    padding: 5px 20px 15px 0;
+    position: relative;	
+}
+.alignright {
+    float: right;
+    padding: 5px 0 15px 20px;	
+    position: relative;
+}
+.media-credit {
+    text-align: right;
+    font-size: 11px;
+    margin-right: 10px;
+}
+.wp-caption-text {
+    font-size: 12px;
+    line-height: 16px;
+}
+.image-magnifier {
+    width: 49px;
+    padding: 10px 5px 9px 32px;
+    background: url("/cms/wp-content/themes/uw/img/misc/misc-sprite.png") no-repeat 0 0 transparent;
+    font-size: 9px;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    line-height: 11px;
+    font-weight: bold;
+    visibility: hidden;
+}
+.alignleft:hover .image-magnifier, .alignright:hover .image-magnifier {
+    visibility:visible;
+}
+/* ---- Inset Boxes ---- */
+
 .info-box {
-  float: right;
-  width: 210px;
-  margin-left: 20px;
-  -webkit-box-shadow: 3px 3px 10px 1px rgba(100, 100, 100, 1);
-  -moz-box-shadow: 3px 3px 10px 1px rgba(100, 100, 100, 1);
-  box-shadow: 3px 3px 10px 1px rgba(100, 100, 100, 1);
-  padding: 20px;
+    border-left: 4px solid #DDD;
+    width: 245px;
+    float: right;
+    padding: 10px 0 10px 20px;
+    margin: 0 0 15px 30px;
+}
+.info-box-large {
+    padding: 25px 0 0 0;
+    margin: 0 0 15px 40px;
+    width: 235px;
+    border-left: none;
+    border-top: 7px solid #D7A900;
+    border-bottom: 7px solid #D7A900;
 }

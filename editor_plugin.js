@@ -11,16 +11,17 @@
 		init : function(ed, url) {
 
 			// Register example button
+      //jQuery is being packed in here since it simplifies everything immensely 
 			ed.addButton('uwinfobox', {
 				title : 'Make an InfoBox',
-        image : 'MyCoolBtn.png', 
-        onclick : function(a,b,c,d,e) { 
+        image : url + '/inset-box.gif', 
+        onclick : function() { 
           ed.focus(); 
-          var max = 200;
-          var selection = ed.selection.getContent();
-          var node = ed.selection.getNode();
-          // [TODO] do this without jquery using the tiny api
-          var $box  = jQuery(ed.selection.getNode()).closest('div.info-box');
+          var max = 200
+            , selection = ed.selection.getContent()
+            , node = ed.selection.getNode()
+            , $box  = jQuery(ed.selection.getNode()).closest('div.info-box');
+
           $box.removeClass('info-box-large');
           if( $box.length > 0 ) {
               $box.replaceWith($box.html());
@@ -33,12 +34,10 @@
         }
 			});
 
-
-			ed.onNodeChange.add(function(ed, cm, n, co) {
-        //[TODO] set image to active state when inside an infobox
-        //jQuery(ed.selection.getNode()).closest('div.info-box').length > 0
-        //tinyMCE.activeEditor.controlManager.get('link').setDisabled(false)
-			});
+      ed.onNodeChange.add(function(ed, cm, n) {
+         cm.setActive('uwinfobox', jQuery(n).closest('.info-box').length > 0) 
+      });
+      
 		},
 		/**
 		 * Returns information about the plugin as a name/value array.
