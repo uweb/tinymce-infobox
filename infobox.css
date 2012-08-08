@@ -80,9 +80,6 @@ ul {
 li {
 	line-height: 21px;
 }
-img {
-	height: auto !important;
-}
 object, embed, iframe {
 	margin: 10px 0 30px 0;
 	display: block;
