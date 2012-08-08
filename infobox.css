@@ -7,7 +7,90 @@
 #content_uwinfobox img  {
 	display: none;
 }
+#tinymce { max-width: 620px !important }
 
+/************************************************************************************
+    Global
+*************************************************************************************/
+body {
+    font-size: 90%;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400; 
+    letter-spacing: -.05em;
+    color: #39275B;
+}
+h1 {
+	margin: 10px 0 25px;
+	font-size: 2.65em;
+	font-weight: 400; 
+	line-height: 1em;
+}
+h2, h3, h4 { 
+	margin-bottom: 10px;
+	font-weight: 300;
+	letter-spacing: 0;
+	font-size: 1.7em;
+}
+h1 i, h1 em {
+	font-weight: 400;
+	font-family: Baskerville, 'Times New Roman', Times, serif;
+	text-transform: lowercase;
+	font-size: 1.1em;
+}
+h2 {
+    font-size: 1.5em;
+    line-height: 26px;
+    margin-bottom: 10px;
+    letter-spacing: 0;
+    font-weight: 300;
+}
+h3 {
+	color: #5C441F;
+	font-size: 1.3em;
+	line-height: 26px;
+}
+h4 {
+	font-weight: 600;
+	font-size: 1.1em;
+	line-height: 24px;
+}
+h4 em {
+	color: #6B6B6B;
+	font-family: Baskerville, 'Times New Roman', Times, serif;
+	font-weight: 300;
+	font-size: 1.3em;
+}
+a {
+    color: #4682A8;
+}
+#branding a:focus {
+	outline: thin dotted #fff;
+}
+p {
+	line-height: 1.5em;
+    margin-bottom: 1.4em;
+}
+ul {
+	margin-left: 5px;
+	margin-bottom: 1.4em;
+}
+li {
+	line-height: 21px;
+}
+img {
+	height: auto !important;
+}
+object, embed, iframe {
+	margin: 10px 0 30px 0;
+	display: block;
+	max-width: 100% !important;
+}
+hr {
+	clear: both;
+}
 /**** Overwrite content.css ****/
 
 .wp-caption {
@@ -33,7 +116,10 @@ body {
   color: #333333;
   background-color: #ffffff;
 }
-
+ul, ol {
+	padding: 0;
+	margin: 0 0 1.4em 5px;
+}
 a {
   color: #0088cc;
   text-decoration: none;
@@ -88,19 +174,39 @@ a:hover {
     visibility:visible;
 }
 /* ---- Inset Boxes ---- */
+	
+	.info-box {
+		border-left: 4px solid #DDD;
+		width: 245px;
+		float: right;
+		padding: 10px 0 0 20px;
+		margin: 0 0 15px 30px;
+	}
+	.info-box-large ul {
+		margin-left: -10px;
+	}
+	.info-box-large {
+		padding: 25px 10px 15px;
+		margin: 15px 0 15px 40px;
+		width: 200px;
+		border-left: none;
+		border-top: 3px solid #D7A900;
+		border-bottom: 3px solid #D7A900;
+	}
+	.info-box-large .wp-caption-text {
+		margin: 0 10px 10px 0;
+		padding: 5px 0 5px 10px;
+		background-color: #EEE;
+	}
+	.entry-content .info-box-large h2 {
+		margin-top: 0;
+	}
+	/* ---- All Gold Bullet Stylings ---- */
 
-.info-box {
-    border-left: 4px solid #DDD;
-    width: 245px;
-    float: right;
-    padding: 10px 0 10px 20px;
-    margin: 0 0 15px 30px;
-}
-.info-box-large {
-    padding: 25px 0 0 0;
-    margin: 0 0 15px 40px;
-    width: 235px;
-    border-left: none;
-    border-top: 7px solid #D7A900;
-    border-bottom: 7px solid #D7A900;
+#tinymce li {
+	margin-left: 0;
+	margin-bottom: 5px;
+	background: url('/cms/discover/wp-content/themes/uw/img/bullet-gold.png') no-repeat left 7px transparent;
+	list-style: none;
+	padding-left: 12px;
 }
